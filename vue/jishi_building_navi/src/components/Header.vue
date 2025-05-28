@@ -9,14 +9,31 @@
         <span class="nav-icon">📘</span>
         <span class="nav-text">About</span>
       </router-link>
+      <div class="search-container">
+        <input
+          v-model="searchQuery"
+          type="text"
+          placeholder="搜索..."
+          class="search-input"
+          @input="handleSearch"
+        />
+      </div>
     </div>
   </nav>
-  <router-view/>
 </template>
 
 <script>
 export default {
-
+  data() {
+    return {
+      searchQuery: ""
+    };
+  },
+  methods: {
+    handleSearch() {
+      this.$emit("search", this.searchQuery);
+    }
+  },
 }
 </script>
 
@@ -101,6 +118,19 @@ export default {
 :root {
   --primary-color: #42b983; /* Vue 官方主题色 */
   --hover-color: #3eaf7c;
+}
+
+/* 搜索框样式 */
+.search-container {
+  margin-left: auto;
+}
+
+/* 搜索输入框样式 */
+.search-input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 200px;
 }
 </style>
 

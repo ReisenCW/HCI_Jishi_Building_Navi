@@ -1,7 +1,5 @@
 <template>
-  <nav>
-    <Header></Header>
-  </nav>
+  <Header></Header>
   <router-view/>
 </template>
 
