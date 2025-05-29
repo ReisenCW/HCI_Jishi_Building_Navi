@@ -30,6 +30,10 @@ const currentRoom = ref(null);
   display: flex;
   flex: 1;
   min-height: 0; /* 修复 flex 容器溢出问题 */
-  overflow: hidden;
+  height: calc(100vh - 60px); /* 减去导航栏高度 */
+  .sidebar {
+    width: 300px;
+    flex-shrink: 0;
+  }
 }
 </style>

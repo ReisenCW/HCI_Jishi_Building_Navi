@@ -2,7 +2,6 @@
     <div class="sidebar">
       <div v-if="currentRoom" class="room-info">
         <h2>{{ currentRoom.name }}</h2>
-        <img :src="currentRoom.image" class="room-image" />
         <p>功能：{{ currentRoom.function }}</p>
         <p v-if="currentRoom.responsible">负责人：{{ currentRoom.responsible }}</p>
         <div v-if="currentRoom.teachers">
@@ -13,6 +12,7 @@
             </li>
           </ul>
         </div>
+        <img :src="currentRoom.image" class="room-image" />
       </div>
       <div v-else class="placeholder">
         鼠标悬停在地图房间上查看信息
@@ -30,7 +30,8 @@
   
   <style scoped>
   .sidebar {
-    width: 500px;
+    width: 300px;
+    height: 100%;
     padding: 1rem;
     background: #f8f9fa;
     border-left: 1px solid #ddd;

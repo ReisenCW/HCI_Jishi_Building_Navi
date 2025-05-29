@@ -2,8 +2,11 @@
   <div class="map-container">
     <div class="map-wrapper">
       <img :src="mapImage" class="map-image" ref="mapEl" />
-      <div v-for="room in rooms" :key="room.id" class="room-area" :style="getRoomStyle(room)"
-        @mouseover="setCurrentRoom(room)"></div>
+      <div 
+        v-for="room in rooms" :key="room.id" 
+        class="room-area" :style="getRoomStyle(room)"
+        @mouseover="setCurrentRoom(room)">
+      </div>
     </div>
   </div>
 </template>
@@ -23,6 +26,7 @@ const getRoomStyle = (room) => ({
   top: `${room.y}%`,
   width: `${room.width}%`,
   height: `${room.height}%`,
+  transform: `rotate(${room.rotate ?? 0}deg)`
 });
 
 const setCurrentRoom = (room) => {
@@ -32,16 +36,25 @@ const setCurrentRoom = (room) => {
 
 <style scoped>
 .map-container {
-  flex: 1;
+  /* 按比例缩放容器 */
+  width: 70vw;          /* 占视口宽度的70% */
+  overflow: auto;        /* 滚动条 */ 
   position: relative;
-  height: 100%;
-  overflow: hidden;
+  background: #f0f0f0;
+}
+
+/* 父容器相对定位，子元素才能用绝对定位 */
+.map-wrapper {
+  position: relative;
+  display: inline-block; /* 包裹图片的原始大小 */
 }
 
 .map-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100%;          /* 图片宽度自适应容器 */
+  height: auto;         /* 高度自适应 */
+  display: block;
+  height: auto;
+  object-fit: contain;   /* 完整显示地图 */
 }
 
 .room-area {
@@ -53,5 +66,17 @@ const setCurrentRoom = (room) => {
 
 .room-area:hover {
   background: rgba(66, 185, 130, 0.5);
+}
+
+/* 自定义滚动条样式 */
+.map-container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: rgba(0,0,0,0.1);
+}
+
+.map-container::-webkit-scrollbar-thumb {
+  background: #42b983;
+  border-radius: 4px;
 }
 </style>
