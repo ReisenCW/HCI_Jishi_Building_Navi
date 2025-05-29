@@ -60,7 +60,7 @@ const setHoveredRoom = (room) => {
 .room-area {
   position: absolute;
   cursor: pointer;
-  background: rgba(110, 171, 171, 0.153);
+  background: rgba(110, 171, 171, 0.256);
   transition: background 0.3s;
 }
 
