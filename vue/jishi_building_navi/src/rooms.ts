@@ -74,7 +74,7 @@ export interface Room {
       function: "软件技术研究中心",
       responsible: "未知",
       teachers: [],
-      image: "/assets/images/419.jpg",
+      image: "/images/419.jpg",
       x: 25, y: 24,
       width: 9, height: 12,
       rotate: 0
@@ -85,7 +85,7 @@ export interface Room {
       function: "会议室",
       responsible: "未知",
       teachers: [],
-      image: "/images/419.jpg",
+      image: "/images/417.jpg",
       x: 25, y: 36,
       width: 9, height: 11,
       rotate: 0
