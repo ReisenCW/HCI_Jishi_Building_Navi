@@ -3,11 +3,7 @@
     <div class="nav-wrapper">
       <router-link to="/" class="nav-link">
         <span class="nav-icon">🏠</span>
-        <span class="nav-text">Home</span>
-      </router-link>
-      <router-link to="/about" class="nav-link">
-        <span class="nav-icon">📘</span>
-        <span class="nav-text">About</span>
+        <span class="nav-text">济事楼4层导览</span>
       </router-link>
       <div class="search-container" style="position: relative;">
         <input
