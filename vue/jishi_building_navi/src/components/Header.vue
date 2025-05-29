@@ -9,7 +9,7 @@
         <span class="nav-icon">📘</span>
         <span class="nav-text">About</span>
       </router-link>
-      <div class="search-container">
+      <div class="search-container" style="position: relative;">
         <input
           v-model="searchQuery"
           type="text"
@@ -17,24 +17,75 @@
           class="search-input"
           @input="handleSearch"
         />
+        <ul v-if="showDropdown" class="search-dropdown">
+          <li
+            v-for="room in filteredRooms"
+            :key="room.id + room.name"
+            @click="selectRoom(room)"
+            class="dropdown-item"
+          >
+            {{ room.name }} - {{ room.function }}
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
+import { rooms } from '../rooms';
+
 export default {
   data() {
     return {
       searchQuery: ""
     };
   },
+  computed: {
+    filteredRooms() {
+      const q = this.searchQuery.trim().toLowerCase();
+      if (!q) return [];
+      // 计算匹配分数，按分数倒序排序
+      const scored = rooms.map(room => {
+        let score = 0;
+        // 检查 id, name, function, responsible
+        ['id', 'name', 'function', 'responsible'].forEach(key => {
+          if (room[key] && room[key].toLowerCase().includes(q)) {
+            score += 10;
+          }
+        });
+        // 检查 teachers 数组
+        if (room.teachers) {
+          room.teachers.forEach(teacher => {
+            if (teacher.toLowerCase().includes(q)) {
+              score += 5;
+            }
+          });
+        }
+        return { room, score };
+      }).filter(item => item.score > 0);
+      // 按分数降序排序
+      scored.sort((a, b) => b.score - a.score);
+      return scored.map(item => item.room);
+    },
+    showDropdown() {
+      return this.searchQuery.trim() !== "" && this.filteredRooms.length > 0;
+    }
+  },
   methods: {
     handleSearch() {
       this.$emit("search", this.searchQuery);
+    },
+    selectRoom(room) {
+      this.$emit("select-room", room);
+      this.searchQuery = "";
+    },
+    getRoomInfo(roomId) {
+      return rooms.find(room => room.id === roomId);
     }
   },
 }
+
 </script>
 
 <style scoped>
@@ -132,6 +183,34 @@ export default {
   border-radius: 4px;
   width: 200px;
 }
+
+/* 下拉框样式 */
+.search-dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0 0;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+  background: #f0f0f0;
+}
+
 </style>
 
 

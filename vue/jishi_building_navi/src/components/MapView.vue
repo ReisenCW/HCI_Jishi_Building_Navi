@@ -5,7 +5,7 @@
       <div 
         v-for="room in rooms" :key="room.id" 
         class="room-area" :style="getRoomStyle(room)"
-        @mouseover="setCurrentRoom(room)">
+        @mouseover="setHoveredRoom(room)">
       </div>
     </div>
   </div>
@@ -29,8 +29,8 @@ const getRoomStyle = (room) => ({
   transform: `rotate(${room.rotate ?? 0}deg)`
 });
 
-const setCurrentRoom = (room) => {
-  emit('update:currentRoom', room);
+const setHoveredRoom = (room) => {
+  emit('update:hoveredRoom', room);
 };
 </script>
 
@@ -60,12 +60,12 @@ const setCurrentRoom = (room) => {
 .room-area {
   position: absolute;
   cursor: pointer;
-  background: rgba(66, 185, 130, 0.3);
+  background: rgba(110, 171, 171, 0.153);
   transition: background 0.3s;
 }
 
 .room-area:hover {
-  background: rgba(66, 185, 130, 0.5);
+  background: rgba(122, 189, 157, 0.5);
 }
 
 /* 自定义滚动条样式 */

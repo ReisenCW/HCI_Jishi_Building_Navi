@@ -52,7 +52,7 @@ export interface Room {
       function: "研究生工作站",
       responsible: "陈梁：69589847",
       teachers: ["尹长青（安全负责人）：18901892339", "陈韩悦（安全员）：69589847"],
-      image: "/images/418-R.jpg",
+      image: "/images/418R.jpg",
       x: 8, y: 24,
       width: 10, height: 12,
       rotate: 0
@@ -63,7 +63,7 @@ export interface Room {
       function: "研究生工作站",
       responsible: "陈梁：69589847",
       teachers: ["尹长青（安全负责人）：18901892339", "陈韩悦（安全员）：69589847"],
-      image: "/images/418-L.jpg",
+      image: "/images/418L.jpg",
       x: 8, y: 36,
       width: 10, height: 11,
       rotate: 0
@@ -74,7 +74,7 @@ export interface Room {
       function: "软件技术研究中心",
       responsible: "未知",
       teachers: [],
-      image: "/images/419.jpg",
+      image: "/assets/images/419.jpg",
       x: 25, y: 24,
       width: 9, height: 12,
       rotate: 0
