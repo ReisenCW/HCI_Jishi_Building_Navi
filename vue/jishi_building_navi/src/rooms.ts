@@ -9,7 +9,7 @@ export interface Room {
     y: number;
     width: number;
     height: number;
-    rotate?: number; // 新增旋转角度属性（单位：度）
+    rotate?: number; // 旋转角度属性（单位：度）
   }
   
   export const rooms: Room[] = [
@@ -263,8 +263,271 @@ export interface Room {
       teachers: ["无"],
       image: "/images/401.jpg",
       x: 8, y: 5,
-      width: 14, height: 6,
+      width: 14, height: 5.5,
       rotate: 0
     },
-    // 房间数据...
+    {
+      id: "426",
+      name: "426",
+      function: "未知",
+      responsible: "无",
+      teachers: ["无"],
+      image: "/images/426.jpg",
+      x: 22, y: 5,
+      width: 7, height: 5.5,
+      rotate: 0
+    },
+    {
+      id: "428",
+      name: "428",
+      function: "未知",
+      responsible: "无",
+      teachers: ["无"],
+      image: "/images/428.jpg",
+      x: 29, y: 5,
+      width: 5, height: 5.5,
+      rotate: 0
+    },
+    {
+      id: "430",
+      name: "430",
+      function: "教学机房",
+      responsible: "陈梁：69589847",
+      teachers: ["未知"],
+      image: "/images/430.jpg",
+      x: 37, y: 7,
+      width: 16, height: 4,
+      rotate: 0
+    },
+    {
+      id: "402",
+      name: "402",
+      function: "学生活动区",
+      responsible: "无",
+      teachers: ["无"],
+      image: "/images/402.jpg",
+      x: 36.5, y: 16.5,
+      width: 15, height: 6,
+      rotate: 0
+    },
+    {
+      id: "432",
+      name: "432",
+      function: "党员之家",
+      responsible: "未知",
+      teachers: ["未知"],
+      image: "/images/432.jpg",
+      x: 58, y: 7,
+      width: 3, height: 4,
+      rotate: 0
+    },
+    {
+      id: "434",
+      name: "434",
+      function: "教室",
+      responsible: "未知",
+      teachers: ["未知"],
+      image: "/images/434.jpg",
+      x: 61, y: 7,
+      width: 4, height: 4,
+      rotate: 0
+    },
+    {
+      id: "403",
+      name: "403",
+      function: "卫生间",
+      responsible: "无",
+      teachers: ["无"],
+      image: "/images/403.jpg",
+      x: 65, y: 7,
+      width: 4, height: 4,
+      rotate: 0
+    },
+    {
+      id: "404",
+      name: "404",
+      function: "图书角",
+      responsible: "无",
+      teachers: ["无"],
+      image: "/images/404.jpg",
+      x: 68, y: 11,
+      width: 8, height: 11,
+      rotate: 0
+    },
+    {
+      id: "5",
+      name: "楼梯间5",
+      function: "消防通道",
+      responsible: "无",
+      teachers: ["无"],
+      image: "/images/5.jpg",
+      x: 69, y: 22,
+      width: 7, height: 3,
+      rotate: 0
+    },
+    {
+      id: "442-R",
+      name: "442-R",
+      function: "学院办公室",
+      responsible: "未知",
+      teachers: ["闫鹏", "张晶", "林伊凡", "张晓雅", "钱银飞", "王昊榕", "俞晓静"],
+      image: "/images/442R.jpg",
+      x: 58, y: 19,
+      width: 7, height: 5.5,
+      rotate: 0
+    },
+    {
+      id: "442-L",
+      name: "442-L",
+      function: "学院办公室",
+      responsible: "未知",
+      teachers: ["刘梦露", "李慧敏", "王彩霞", "杨丹", "姚世仪"],
+      image: "/images/442L.jpg",
+      x: 58, y: 24.5,
+      width: 7, height: 5,
+      rotate: 0
+    },
+    {
+      id: "444",
+      name: "444",
+      function: "档案室",
+      responsible: "未知",
+      teachers: ["未知"],
+      image: "/images/444L.jpg",
+      x: 58, y: 29.5,
+      width: 7, height: 4,
+      rotate: 0
+    },
+    {
+      id: "441",
+      name: "441",
+      function: "会议室",
+      responsible: "未知",
+      teachers: ["无"],
+      image: "/images/441.jpg",
+      x: 69, y: 25,
+      width: 7, height: 8,
+      rotate: 0
+    },
+    {
+      id: "443",
+      name: "443",
+      function: "实验中心",
+      responsible: "未知",
+      teachers: ["陈梁", "杨旻", "严海洲"],
+      image: "/images/443.jpg",
+      x: 70, y: 33,
+      width: 6, height: 3,
+      rotate: -9
+    },
+    {
+      id: "445",
+      name: "445",
+      function: "卫生间",
+      responsible: "无",
+      teachers: ["无"],
+      image: "/images/445.jpg",
+      x: 71, y: 36,
+      width: 6, height: 4.5,
+      rotate: -29
+    },
+    {
+      id: "451",
+      name: "451",
+      function: "副院长办公室",
+      responsible: "无",
+      teachers: ["451-1：王成", "451-2：何良华", "451-3：张林"],
+      image: "/images/451.jpg",
+      x: 75, y: 39.5,
+      width: 6, height: 5.5,
+      rotate: -49
+    },
+    {
+      id: "6",
+      name: "楼梯间6",
+      function: "消防通道",
+      responsible: "无",
+      teachers: ["无"],
+      image: "/images/6.jpg",
+      x: 79, y: 43,
+      width: 6.5, height: 3.5,
+      rotate: -55
+    },
+    {
+      id: "446",
+      name: "446",
+      function: "学生工作办公室",
+      responsible: "未知",
+      teachers: ["张砚秋", "丁瑞庭", "葛蕾", "焦嘉欣", "钟梦莹", "陈璞皎"],
+      image: "/images/446.jpg",
+      x: 58, y: 33.5,
+      width: 7, height: 5,
+      rotate: -10
+    },
+    {
+      id: "448",
+      name: "448",
+      function: "副书记办公室+院务助理办公室",
+      responsible: "未知",
+      teachers: ["448-1-副书记：陈荣", "448-2-副书记：吴晓培", "448-3-院务助理：宋井宽"],
+      image: "/images/448.jpg",
+      x: 58.5, y: 39,
+      width: 7.5, height: 3,
+      rotate: -26
+    },
+    {
+      id: "450-R",
+      name: "450-R",
+      function: "院长办公室",
+      responsible: "申恒涛",
+      teachers: ["申恒涛"],
+      image: "/images/450R.jpg",
+      x: 61, y: 41.5,
+      width: 7.5, height: 6.5,
+      rotate: -35
+    },
+    {
+      id: "450-L",
+      name: "450-L",
+      function: "党委书记办公室",
+      responsible: "熊岚",
+      teachers: ["熊岚"],
+      image: "/images/450L.jpg",
+      x: 65.5, y: 46.5,
+      width: 7.5, height: 6.5,
+      rotate: -40
+    },
+    {
+      id: "7",
+      name: "楼梯间7",
+      function: "消防通道",
+      responsible: "无",
+      teachers: ["无"],
+      image: "/images/7.jpg",
+      x: 71, y: 51.5,
+      width: 7, height: 3,
+      rotate: -52
+    },
+    {
+      id: "455",
+      name: "455",
+      function: "会议室",
+      responsible: "无",
+      teachers: ["无"],
+      image: "/images/455.jpg",
+      x: 89, y: 46.5,
+      width: 6, height: 5,
+      rotate: -55
+    },
+    {
+      id: "456",
+      name: "456",
+      function: "党委办公室",
+      responsible: "无",
+      teachers: ["周微微", "陆凤兰", "赵清理"],
+      image: "/images/456.jpg",
+      x: 82, y: 54,
+      width: 6, height: 5,
+      rotate: -55
+    },
   ];
