@@ -16,6 +16,7 @@
           placeholder="搜索..."
           class="search-input"
           @input="handleSearch"
+          :disabled="isAboutPage"
         />
         <ul v-if="showDropdown" class="search-dropdown">
           <li
@@ -34,6 +35,7 @@
 
 <script>
 import { rooms } from '../rooms';
+import { useRoute } from 'vue-router';
 
 export default {
   data() {
@@ -70,6 +72,10 @@ export default {
     },
     showDropdown() {
       return this.searchQuery.trim() !== "" && this.filteredRooms.length > 0;
+    },
+    isAboutPage() {
+      const route = useRoute();
+      return route.name === 'about';
     }
   },
   methods: {
@@ -85,7 +91,6 @@ export default {
     }
   },
 }
-
 </script>
 
 <style scoped>
@@ -213,6 +218,3 @@ export default {
 }
 
 </style>
-
-
-
