@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkjishi_building_navi"]=self["webpackChunkjishi_building_navi"]||[]).push([[594],{5609:function(n,i,u){u.r(i),u.d(i,{default:function(){return l}});var a=u(6768);const s={class:"about"};function t(n,i){return(0,a.uX)(),(0,a.CE)("div",s,i[0]||(i[0]=[(0,a.Lk)("h1",null,"This is an about page",-1)]))}var e=u(1241);const r={},c=(0,e.A)(r,[["render",t]]);var l=c}}]);
+//# sourceMappingURL=about.222bfd7d.js.map
