@@ -37,7 +37,8 @@ const setHoveredRoom = (room) => {
 <style scoped>
 .map-container {
   /* 按比例缩放容器 */
-  width: 70vw;          /* 占视口宽度的70% */
+  margin: 0 10vw;
+  width: 40vw;          /* 占视口宽度的40% */
   overflow: auto;        /* 滚动条 */ 
   position: relative;
   background: #f0f0f0;

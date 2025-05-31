@@ -177,7 +177,7 @@ export default {
   padding: 0.5rem;
   border: 1px solid #ddd;
   border-radius: 4px;
-  width: 200px;
+  width: 400px;
 }
 
 /* 下拉框样式 */

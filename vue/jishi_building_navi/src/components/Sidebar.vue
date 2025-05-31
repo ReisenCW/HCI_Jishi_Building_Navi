@@ -2,8 +2,9 @@
   <div class="sidebar">
     <div v-if="currentRoom" class="room-info">
       <h2>{{ currentRoom.name }}</h2>
-      <p>功能：{{ currentRoom.function }}</p>
-      <p v-if="currentRoom.responsible">负责人：{{ currentRoom.responsible }}</p>
+      <hr>
+      <p><strong>功能</strong>：{{ currentRoom.function }}</p>
+      <p v-if="currentRoom.responsible"><strong>负责人</strong>：{{ currentRoom.responsible }}</p>
       <div v-if="currentRoom.teachers">
         <h3>教师：</h3>
         <ul>
@@ -50,7 +51,7 @@ export default {
 
 <style scoped>
 .sidebar {
-  width: 300px;
+  width: 400px;
   height: 100%;
   padding: 1rem;
   background: #f8f9fa;
@@ -62,6 +63,24 @@ export default {
   height: 200px;
   object-fit: cover;
   margin: 1rem 0;
+}
+
+.room-info h2{
+  font-size: 30px;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.room-info ul {
+  /*左对齐*/ 
+  list-style-type:square;
+}
+
+
+.room-info {
+  margin: 30px;
+  font-size: 20px;
+  text-align: left;
 }
 
 /* Modal 样式 */
