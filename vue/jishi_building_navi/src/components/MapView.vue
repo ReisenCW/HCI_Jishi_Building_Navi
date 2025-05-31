@@ -32,6 +32,8 @@ const getRoomStyle = (room) => ({
 const setHoveredRoom = (room) => {
   emit('update:hoveredRoom', room);
 };
+
+
 </script>
 
 <style scoped>

@@ -5,6 +5,10 @@
         <span class="nav-icon">🏠</span>
         <span class="nav-text">济事楼4层导览</span>
       </router-link>
+      <router-link to="/about" class="nav-link">
+        <span class="nav-icon">📍</span>
+        <span class="nav-text">关于</span>
+      </router-link>
       <div class="search-container" style="position: relative;">
         <input
           v-model="searchQuery"
@@ -102,6 +106,7 @@ export default {
 }
 
 .nav-link {
+  width: 50%;
   position: relative;
   display: inline-flex;
   align-items: center;
